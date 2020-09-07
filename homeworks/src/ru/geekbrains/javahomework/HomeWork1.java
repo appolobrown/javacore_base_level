@@ -23,15 +23,17 @@ public class HomeWork1 {
         //2
         System.out.println(isInRange(10, 11));
         //3
-        checkPositive(0);
+        System.out.println(checkPositive(0));
         //4
         helloName("переданное_имя");
         //5
-        printIsYearLeap(2020);
+        int year = 2020;
+        String leap = isYearLeap(year) ? "високосный" : "не високосный";
+        System.out.println(year + " " + leap + " год");
     }
 
     // 1
-    private static int countWithFormula(int a, int b, int c, int d) {
+    private static double countWithFormula(int a, int b, int c, int d) {
         return a * (b + (c / d));
     }
 
@@ -44,13 +46,8 @@ public class HomeWork1 {
     }
 
     //3
-    private static void checkPositive(int a) {
-        String wordIs = "";
-        if (a >= 0)
-            wordIs = "положительное";
-        else
-            wordIs = "отрицательное";
-        System.out.println(wordIs);
+    private static String checkPositive(int a) {
+        return a >= 0 ? "положительное" : "отрицательное";
     }
 
     //4
@@ -59,18 +56,15 @@ public class HomeWork1 {
     }
 
     //5
-    private static void printIsYearLeap(int year) {
-        boolean isLeap = false;
+    private static boolean isYearLeap(int year) {
         if (year % 4 == 0) {
             if (year % 100 == 0) {
-                if (year % 400 == 0) isLeap = true;
-            } else isLeap = true;
+                if (year % 400 == 0) return true;
+            } else return true;
         }
+        return false;
 
-        String leap = "";
-        if (isLeap) leap = "високосный";
-        else leap = "не високосный";
-        System.out.println(year + " " + leap + " год");
+
     }
 }
 
