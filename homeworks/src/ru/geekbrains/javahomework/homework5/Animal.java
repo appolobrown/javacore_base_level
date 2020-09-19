@@ -26,9 +26,9 @@ public abstract class Animal {
 
     public Animal(String name, double runRestriction, double swimRestriction, double jumpRestriction) {
         this.name = name;
-        this.runRestriction = runRestriction;
-        this.swimRestriction = swimRestriction;
-        this.jumpRestriction = jumpRestriction;
+        this.runRestriction = getAmountWIthRandomCoefficient(runRestriction);
+        this.swimRestriction = getAmountWIthRandomCoefficient(swimRestriction);
+        this.jumpRestriction = getAmountWIthRandomCoefficient(jumpRestriction);
     }
 
     private double getAmountWIthRandomCoefficient(double amount) {
@@ -38,15 +38,15 @@ public abstract class Animal {
     }
 
     public double getRunRestriction() {
-        return getAmountWIthRandomCoefficient(runRestriction);
+        return runRestriction;
     }
 
     public double getSwimRestriction() {
-        return getAmountWIthRandomCoefficient(swimRestriction);
+        return swimRestriction;
     }
 
     public double getJumpRestriction() {
-        return getAmountWIthRandomCoefficient(jumpRestriction);
+        return jumpRestriction;
     }
 
     public String getName() {
