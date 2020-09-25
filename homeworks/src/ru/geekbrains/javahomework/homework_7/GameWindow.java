@@ -24,27 +24,17 @@ public class GameWindow extends JFrame {
 //        setLocationRelativeTo(null);
         SettingsWindow settingsWindow = new SettingsWindow(this);
         JButton buttonStart = new JButton("Start");
-        buttonStart.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                settingsWindow.setVisible(true);
-            }
-        });
+        buttonStart.addActionListener(e -> settingsWindow.setVisible(true));
 //        buttonStart.setPreferredSize(new Dimension(0,200));
         JButton buttonStop = new JButton("Stop");
-        buttonStop.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
+        buttonStop.addActionListener(e -> System.exit(0));
 
         JPanel panelBottom = new JPanel();
         panelBottom.setLayout(new GridLayout(1, 2));
         panelBottom.add(buttonStart);
         panelBottom.add(buttonStop);
-        map = new Map();
 
+        map = new Map();
         add(map, BorderLayout.CENTER);
         add(panelBottom, BorderLayout.SOUTH);
 

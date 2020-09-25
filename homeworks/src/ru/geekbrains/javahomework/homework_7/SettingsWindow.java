@@ -18,8 +18,8 @@ public class SettingsWindow extends JFrame {
     private GameWindow gameWindow;
     private JRadioButton humVSAI;
     private JRadioButton humVSHum;
-    JSlider fieldSizeSlider;
-    JSlider winSizeSlider;
+    private JSlider fieldSizeSlider;
+    private JSlider winSizeSlider;
 
     SettingsWindow(GameWindow gameWindow) {
         this.gameWindow = gameWindow;
